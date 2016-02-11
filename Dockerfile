@@ -3,9 +3,10 @@ FROM ubuntu:latest
 MAINTAINER Doğan Aydın <dogan1aydin@gmail.com>
 
 RUN apt-get update
-RUN apt-get install -y git-core
-RUN git clone https://gitorious.org/cs16-docker/cs16-docker.git
-CMD ./cs16-docker/hlds_run -binary ./cs16-docker/hlds_amd -game cstrike +map de_dust2 +maxplayers 30 -nomaster -insecure +sys_ticrate 250 +sv_lan 1
+RUN apt-get install -y git-core lib32gcc1 screen wget
+RUN mkdir ~/cs16 ; cd ~/cs16
+RUN wget http://media.steampowered.com/installer/steamcmd_linux.tar.gz
+RUN tar -xvzf steamcmd_linux.tar.gz
 
 EXPOSE 27015 27015
 EXPOSE 27039 27039
