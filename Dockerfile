@@ -4,9 +4,13 @@ MAINTAINER Doğan Aydın <dogan1aydin@gmail.com>
 
 RUN apt-get update
 RUN apt-get install -y git-core lib32gcc1 screen wget
-RUN mkdir ~/cs16 ; cd ~/cs16
-RUN wget http://media.steampowered.com/installer/steamcmd_linux.tar.gz
-RUN tar -xvzf steamcmd_linux.tar.gz
+RUN \
+mkdir /cs16 && \
+cd /cs16 && \
+wget http://media.steampowered.com/installer/steamcmd_linux.tar.gz && \
+tar -xvzf steamcmd_linux.tar.gz && \
+
+CMD ["/cs16/steamcmd.sh"]
 
 EXPOSE 27015 27015
 EXPOSE 27039 27039
