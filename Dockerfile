@@ -12,13 +12,15 @@ tar -xvzf steamcmd_linux.tar.gz && ls -la
 
 WORKDIR "/cs16"
 
+COPY install_cs.txt install_cs.txt
+
 RUN \
-./steamcmd.sh +login anonymous +app_update 90 validate +quit && \
-./steamcmd.sh +login anonymous +app_update 90 validate +quit
+./steamcmd.sh +runscript install_cs.txt && \
+./steamcmd.sh +runscript install_cs.txt
 
 WORKDIR "~/Steam/steamapps/common/Half-Life"
 
-CMD ["./hlds_run -game cstrike -autoupdate +maxplayers 30 +map de_dust2"]
+#CMD ["./hlds_run +sv_lan 1 -nomaster -game cstrike -autoupdate +maxplayers 30 +map de_dust2"]
 
 ## Steam Client
 # inclusive (Game client traffic) 
