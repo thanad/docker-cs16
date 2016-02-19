@@ -11,7 +11,14 @@ wget http://media.steampowered.com/installer/steamcmd_linux.tar.gz && \
 tar -xvzf steamcmd_linux.tar.gz && ls -la
 
 WORKDIR "/cs16"
-CMD ["./steamcmd.sh"]
+
+RUN \
+./steamcmd.sh +login anonymous +app_update 90 validate +quit && \
+./steamcmd.sh +login anonymous +app_update 90 validate +quit
+
+WORKDIR "~/Steam/steamapps/common/Half-Life"
+
+CMD ["./hlds_run -game cstrike -autoupdate +maxplayers 30 +map de_dust2"]
 
 ## Steam Client
 # inclusive (Game client traffic) 
