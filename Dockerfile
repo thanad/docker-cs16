@@ -15,8 +15,8 @@ WORKDIR "/cs16"
 COPY install_cs.txt install_cs.txt
 
 RUN \
-./steamcmd.sh +runscript install_cs.txt && \
-./steamcmd.sh +runscript install_cs.txt
+while [ ! -d ~/Steam/steamapps/common/Half-Life/cstrike ]; do ./steamcmd.sh +runscript install_cs.txt;sleep 1; done && \
+ls -la ~/Steam/steamapps/common/Half-Life
 
 WORKDIR "~/Steam/steamapps/common/Half-Life"
 
