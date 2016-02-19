@@ -8,7 +8,8 @@ RUN \
 mkdir /cs16 && \
 cd /cs16 && \
 wget http://media.steampowered.com/installer/steamcmd_linux.tar.gz && \
-tar -xvzf steamcmd_linux.tar.gz && ls -la
+tar -xvzf steamcmd_linux.tar.gz && \
+rm steamcmd_linux.tar.gz
 
 WORKDIR "/cs16"
 
