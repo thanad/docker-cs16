@@ -3,6 +3,9 @@ docker-cs16
 
 Counter Strike 1.6 dedicated server in docker
 
+[![](https://badge.imagelayers.io/thanadmaqecom/docker-cs16:latest.svg)](https://imagelayers.io/?images=thanadmaqecom/docker-cs16:latest 'Get your own badge on imagelayers.io')
+
+
 ### Install with steamcmd.sh
 ```
 login anonymous
