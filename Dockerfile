@@ -20,6 +20,6 @@ ls -la ~/Steam/steamapps/common/Half-Life
 
 WORKDIR "~/Steam/steamapps/common/Half-Life"
 
-#CMD ["./hlds_run +sv_lan 1 -nomaster -game cstrike -autoupdate +maxplayers 30 +map de_dust2"]
+CMD ["./hlds_run +sv_lan 1 -nomaster -game cstrike -autoupdate +maxplayers 30 +map de_dust2"]
 
 EXPOSE 27015/tcp 27015/tcp
