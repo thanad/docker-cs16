@@ -13,9 +13,17 @@ tar -xvzf steamcmd_linux.tar.gz && ls -la
 WORKDIR "/cs16"
 CMD ["./steamcmd.sh"]
 
-EXPOSE 27015 27015
-EXPOSE 27039 27039
+#Steam Client
+EXPOSE 27000-27015/UDP #inclusive (Game client traffic) 
+EXPOSE 27015-27030/UDP #inclusive (Typically Matchmaking and HLTV) 
+EXPOSE 27014-27050/TCP #inclusive (Steam downloads) 
+EXPOSE 4380/UDP
 
-EXPOSE 1200/udp 1200/udp
-EXPOSE 27000/udp 27000/udp
-EXPOSE 27015/udp 27015/udp
+#Dedicated or Listen Servers
+EXPOSE 27015/TCP (SRCDS Rcon port) 
+
+#Steamworks P2P Networking and Steam Voice Chat
+EXPOSE  3478/UDP
+EXPOSE  4379/UDP
+EXPOSE  4380/UDP
+
