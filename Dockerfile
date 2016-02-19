@@ -10,7 +10,7 @@ cd /cs16 && \
 wget http://media.steampowered.com/installer/steamcmd_linux.tar.gz && \
 tar -xvzf steamcmd_linux.tar.gz && \
 
-CMD ["/cs16/steamcmd.sh"]
+#CMD ["/cs16/steamcmd.sh"]
 
 EXPOSE 27015 27015
 EXPOSE 27039 27039
