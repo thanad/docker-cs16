@@ -1,6 +1,6 @@
 FROM phusion/baseimage:latest
 
-MAINTAINER Doğan Aydın <dogan1aydin@gmail.com>
+MAINTAINER Thanad Pansing <thanad@gmail.com>
 
 RUN apt-get update
 RUN apt-get install -y git-core lib32gcc1 screen wget
