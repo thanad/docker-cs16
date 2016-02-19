@@ -22,21 +22,4 @@ WORKDIR "~/Steam/steamapps/common/Half-Life"
 
 #CMD ["./hlds_run +sv_lan 1 -nomaster -game cstrike -autoupdate +maxplayers 30 +map de_dust2"]
 
-## Steam Client
-# inclusive (Game client traffic) 
-EXPOSE 27000-27015/udp
-# inclusive (Typically Matchmaking and HLTV) 
-EXPOSE 27015-27030/udp
-# inclusive (Steam downloads) 
-EXPOSE 27014-27050/tcp
-EXPOSE 4380/udp
-
-## Dedicated or Listen Servers
-# (SRCDS Rcon port) 
-EXPOSE 27015/tcp
-
-## Steamworks P2P Networking and Steam Voice Chat
-EXPOSE  3478/udp
-EXPOSE  4379/udp
-EXPOSE  4380/udp
-
+EXPOSE 27015/tcp 27015/tcp
