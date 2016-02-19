@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM phusion/baseimage:latest
 
 MAINTAINER Doğan Aydın <dogan1aydin@gmail.com>
 
