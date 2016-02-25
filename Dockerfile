@@ -18,7 +18,7 @@ COPY install_cs.txt install_cs.txt
 RUN \
 while [ ! -d ~/Steam/steamapps/common/Half-Life/cstrike ]; do ./steamcmd.sh +runscript install_cs.txt;sleep 1; done
 
-WORKDIR "~/Steam/steamapps/common/Half-Life"
+WORKDIR /root/Steam/steamapps/common/Half-Life
 
 CMD ["./hlds_run" , "+sv_lan 1" , "-nomaster" , "-game cstrike" , "+maxplayers 30","+map de_dust2"]
 
