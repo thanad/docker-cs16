@@ -22,4 +22,8 @@ WORKDIR /root/Steam/steamapps/common/Half-Life
 
 CMD ["./hlds_run" , "+sv_lan 1" , "-nomaster" , "-game cstrike" , "+maxplayers 30","+map de_dust2"]
 
-EXPOSE 27015
+CMD ["/root/Steam/steamapps/common/Half-Life/hlds_run" , "+sv_lan 1" , "-nomaster" , "-game cstrike" , "+maxplayers 30","+map de_dust2"]
+
+EXPOSE 27015/tcp #(RCON)
+EXPOSE 27015/udp #(game transmission, pings)
+EXPOSE 26900/udp #(VAC service) -- automatically increments if used in case of additional server processes
